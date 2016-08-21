@@ -1,0 +1,45 @@
+{
+  "name": "babel-plugin-jsx-base-component",
+  "version": "0.1.0",
+  "description": "Neater control exists component or component type for jsx",
+  "author": {
+    "name": "Yurii Khmelevskii",
+    "email": "y@uwinart.com"
+  },
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khmelevskii/babel-plugin-jsx-base-component"
+  },
+  "bugs": {
+    "url": "https://github.com/khmelevskii/babel-plugin-jsx-base-component/issues"
+  },
+  "keywords": [
+    "react",
+    "jsx",
+    "exists",
+    "base",
+    "babel",
+    "react-component"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha spec/*.js",
+    "cover": "istanbul cover -x \"**/spec/**\" node_modules/mocha/bin/_mocha spec/*.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.1.2",
+    "babel-plugin-syntax-jsx": "^6.1.18"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.1.2",
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.1",
+    "mocha": "^3.0.2",
+    "node-jsx": "^0.13.3",
+    "react": "^15.3.x",
+    "react-dom": "^15.3.x"
+  }
+}
