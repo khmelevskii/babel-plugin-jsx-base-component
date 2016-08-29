@@ -1,39 +1,37 @@
 # babel-plugin-jsx-base-component
 
-Это Babel 6 плагин, который позволяет вам использовать в вашем `jsx` компонент
-`<Base />`  имеющий два свойства:
-- `exists` - указывает на то, отображать содержимое компонента или нет
-- `component` - указывает каким компонентом на самом деле является `<Base />`. По умолчанию `<div />`
+This is Babel 6 plugin allowing to use `<Base />` component in your `jsx`.
+It has two properties:
+- `exists` - specifies whether the component content is shown
+- `component` - shows which component `<Base />` actually is. It is `<div />` by default
 
-Дополнительно компонент `<Base />` может принимать свойства, которые будут
-переданы в `component`.
+In addition `<Base />` component can take properties, that will be passed to `component`.
 
-**Данный компонент может помочь сделать ваш метод render более читабельным и лаконичным.**
+**This component can help make your render method more readable and concise.**
 
 ## Syntax and use cases
-Что бы показать зачем нужен `<Base />` компонент, рассмотрим его варианты использования
-и результат его трансформации:
+To show the purpose of `<Base />` component let's consider its variants of use 
+and the result of its transformation:
 
-**1.** Выводим список `ul` если у него есть содержимое.
+**1.** List `ul` content is any.
 ```javascript
 <Base exists={props.comments.length !== 0} component="ul">
   ...
 </Base>
 ```
-После трансформации:
+After transformation:
 ```javascript
 { props.comments.length !== 0 ? <ul> ... </ul> : null }
 ```
 
 
-**2.** Вы можете использовать условия в свойстве `component`, а также передавать в
-него любые react-компоненты.
+**2.** You can use conditions in `component` property, and also pass any react-components to it.
 ```javascript
 <Base component={props.targetBalnk ? 'a' : Link} href="/dashboard">
   Dashboard
 </Base>
 ```
-После трансформации:
+After transformation:
 ```javascript
 const Component = props.targetBalnk ? 'a' : Link;
 ...
@@ -45,7 +43,7 @@ return (
 ```
 
 
-**3.** Комплексный пример.
+**3.** Complex Example.
 ```
   <Base
     component={props.status === 'important' || props.blockApp ? ImportantBar : AlertBar}
@@ -53,7 +51,7 @@ return (
     className={scss.alertBar} icon="car" text={props.text}
   />
 ```
-После трансформации:
+After transformation:
 ```
 const Component = props.status === 'important' || props.blockApp ? ImportantBar : AlertBar;
 ...
@@ -66,8 +64,8 @@ return (
 );
 ```
 
-Обратите внимание: данный плагин после трансформации не создает никаких
-допоолнительных span'ов или других оберточных тегов.
+Note: After transformation this plugin does not create any additional spans 
+or other wrapping tags.
 
 
 ## Installation
@@ -88,12 +86,11 @@ Then you only need to specify `jsx-base-component` as Babel plugin, which you wo
 ```
 
 ## Linting
-Так как `<Base />` компонент трансформируеться с помощью Babel, то вам не нужно
-импортировать(import) или подключать(require) его. Но это, в скою очередь,
-приведет к тому, что ESLint будет предепреждать о том, что переменная
-Base не определена.
-Что бы исправить это, просто добавьте в ваш `.eslintrc` `Base` как глобальную
-переменную.
+Since `<Base />` component is transformed using Babel, you don't need
+to import (import) or plug it in (require). But in its turn 
+it will result in ESLint warning that Base variable is undefined.
+To fix this, just add `Base` as global variable in your `.eslintrc` 
+
 ```
 "globals": {
   ...
