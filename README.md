@@ -1,6 +1,7 @@
 # babel-plugin-jsx-base-component
 
 [![Build Status](https://travis-ci.org/khmelevskii/babel-plugin-jsx-base-component.svg?branch=master)](https://travis-ci.org/khmelevskii/babel-plugin-jsx-base-component)
+[![Coverage Status](https://coveralls.io/repos/github/khmelevskii/babel-plugin-jsx-base-component/badge.svg)](https://coveralls.io/github/khmelevskii/babel-plugin-jsx-base-component)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-jsx-base-component.svg?style=flat)](https://www.npmjs.com/package/babel-plugin-jsx-base-component)
 
 This is Babel 6 plugin allowing to use `<Base />` component in your `jsx`.
