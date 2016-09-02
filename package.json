@@ -34,11 +34,11 @@
   "devDependencies": {
     "babel-preset-react": "^6.1.2",
     "chai": "^3.5.0",
-    "chai-spies": "^0.7.1",
+    "chai-enzyme": "^0.5.1",
     "coveralls": "^2.11.6",
+    "enzyme": "^2.4.1",
     "istanbul": "^0.4.1",
     "mocha": "^3.0.2",
-    "node-jsx": "^0.13.3",
     "react": "^15.3.x",
     "react-dom": "^15.3.x"
   }
