@@ -18,7 +18,7 @@ module.exports = function (babel) {
   };
 
   return {
-    inherits: require("babel-plugin-syntax-jsx"),
-    visitor: visitor,
+    inherits: require('babel-plugin-syntax-jsx'),
+    visitor: visitor
   };
 };

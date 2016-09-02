@@ -23,14 +23,14 @@ function getComponentName(babelTypes, componentAttribute) { // {{{
   return componentName;
 } // }}}
 
-module.exports = function(babel) {
+module.exports = function (babel) {
   var types = babel.types;
   var baseAttributes = {
     exists: 'exists',
-    component: 'component',
+    component: 'component'
   };
 
-  return function(node, file) {
+  return function (node) {
     var result = [];
 
     var children = astUtil.getChildren(types, node);
@@ -39,7 +39,7 @@ module.exports = function(babel) {
     var existsAttribute = astUtil.getAttribute(types, attributes, baseAttributes.exists);
     var componentAttribute = astUtil.getAttributeValue(types, attributes, baseAttributes.component);
 
-    var availableAttributes = attributes.filter(function(attr) {
+    var availableAttributes = attributes.filter(function (attr) {
       return (
         types.isJSXSpreadAttribute(attr)
         || typeof baseAttributes[attr.name.name] === 'undefined'
@@ -76,5 +76,5 @@ module.exports = function(babel) {
     );
 
     return result;
-  }
+  };
 };

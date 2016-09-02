@@ -3,7 +3,7 @@ var Base = require('../src/index');
 require('babel-core/register')({
   presets: ['babel-preset-react'],
   plugins: [Base],
-  cache: false,
+  cache: false
 });
 
 require('./test/basic');

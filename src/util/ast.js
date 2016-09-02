@@ -6,7 +6,7 @@
  */
 function getAttributes(node) { // {{{
   return node.openingElement.attributes || [];
-}; // }}}
+} // }}}
 
 /**
  *
@@ -17,14 +17,14 @@ function getAttributes(node) { // {{{
  * @returns {JSXAttribute | JSXSpreadAttribute}
  */
 function getAttribute(babelTypes, attributes, name) { // {{{
-  return (attributes || []).find(function(attr) {
+  return (attributes || []).find(function (attr) {
     if (babelTypes.isJSXSpreadAttribute(attr)) {
       return false;
     }
 
     return attr.name.name === name;
   });
-}; // }}}
+} // }}}
 
 /**
  *
@@ -48,7 +48,7 @@ function getAttributeValue(babelTypes, attributes, name) { // {{{
   }
 
   return attributeValue;
-}; // }}}
+} // }}}
 
 /**
  *
@@ -64,9 +64,9 @@ function getVariableDeclaration(babelTypes, kind, name, value) { // {{{
     babelTypes.variableDeclarator(
       babelTypes.identifier(name),
       value
-    ),
+    )
   ]);
-}; // }}}
+} // }}}
 
 /**
  * Get all children from given element.
@@ -78,7 +78,7 @@ function getVariableDeclaration(babelTypes, kind, name, value) { // {{{
 function getChildren(babelTypes, node) { // {{{
   var children = babelTypes.react.buildChildren(node);
 
-  return children.map(function(item) {
+  return children.map(function (item) {
     if (babelTypes.isStringLiteral(item)) {
       return babelTypes.JSXText(item.value);
     }
@@ -100,7 +100,7 @@ function getChildren(babelTypes, node) { // {{{
 
     return item;
   });
-}; // }}}
+} // }}}
 
 /**
  *
@@ -116,7 +116,7 @@ function getAttributeConditionExpression(babelTypes, nameAttribute, attribute) {
   }
 
   return attribute.value.expression;
-}; // }}}
+} // }}}
 
 /**
  * Get all children from given element.
@@ -138,7 +138,7 @@ function getjSXElement(babelTypes, name, attributes, children) { // {{{
     children,
     true
   );
-}; // }}}
+} // }}}
 
 module.exports = {
   getAttributes: getAttributes,
@@ -147,5 +147,5 @@ module.exports = {
   getVariableDeclaration: getVariableDeclaration,
   getAttributeConditionExpression: getAttributeConditionExpression,
   getChildren: getChildren,
-  getjSXElement: getjSXElement,
+  getjSXElement: getjSXElement
 };
