@@ -88,7 +88,12 @@ function getChildren(babelTypes, node) { // {{{
       babelTypes.isMemberExpression(item) ||
       babelTypes.isCallExpression(item) ||
       babelTypes.isConditionalExpression(item) ||
-      babelTypes.isLogicalExpression(item)
+      babelTypes.isLogicalExpression(item) ||
+      babelTypes.isFunctionExpression(item) ||
+      babelTypes.isArrowFunctionExpression(item) ||
+      babelTypes.isArrayExpression(item) ||
+      babelTypes.isNumericLiteral(item) ||
+      babelTypes.isBooleanLiteral(item)
     ) {
       return babelTypes.jSXExpressionContainer(item);
     }
