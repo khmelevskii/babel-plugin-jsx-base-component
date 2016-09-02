@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsx-base-component",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Neater control exists component or component type for jsx",
   "author": {
     "name": "Yurii Khmelevskii",
